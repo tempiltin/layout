@@ -28,7 +28,9 @@ const Registration = () => {
                 console.log(actualData);
                 document.getElementById("registration-form").reset() // reset Funksiyasi submit hodisasidan keyin formni ichidagi inputlarni  maydonini tozalab yuboradi
                 setError({ status: true, msg: "Ro'yhatdan o'tish Mufofaqiyatli amalga oshirildi", type: "success" })
-                // navigate("/")
+                setTimeout(()=>{
+                    navigate("/login")
+                },3300)
             }else{
                 setError({ status: true, msg: "Parol bir biriga mos emas", type: "error" })
             }

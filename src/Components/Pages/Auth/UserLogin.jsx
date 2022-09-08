@@ -22,7 +22,7 @@ const UserLogin = () => {
             console.log(actualData);
             document.getElementById("login-form").reset() // reset Funksiyasi submit hodisasidan keyin formni ichidagi inputlarni  maydonini tozalab yuboradi
             setError({ status: true, msg: "Kirish Mufofaqiyatli amalga oshirildi", type: "success" })
-            navigate("/")
+            navigate("/dashboard")
 
         } else {
             setError({ status: true, msg: "Barcha maydonlarni kiritish majburiy !", type: "error" })
@@ -35,7 +35,7 @@ const UserLogin = () => {
             <Box textAlign={"center"}>
                 <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2, px: 5 }}>Login</Button>
             </Box>
-            <Link to={'/'}>Forgot Password 🤔</Link>
+            <Link to={'/send-password-reset-email'}>Forgot Password 🤔</Link>
             {
                 error.status ? <Alert severity={error.type}>{error.msg}</Alert> :""
             }
