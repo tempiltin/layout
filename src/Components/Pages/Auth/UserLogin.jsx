@@ -1,5 +1,5 @@
 import { Alert, Box, Button, TextField } from "@mui/material";
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 /* 
 
@@ -30,15 +30,16 @@ const UserLogin = () => {
     }
     return <>
         <Box component={"form"} noValidate id="login-form" sx={{ mt: 2 }} onSubmit={handleSubmit}>
+            {
+                error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ""
+            }
             <TextField required fullWidth margin="normal" id="email" name="email" label="Email Address" />
             <TextField required fullWidth margin="normal" id="password" name="password" type={'password'} label="Password" />
             <Box textAlign={"center"}>
                 <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2, px: 5 }}>Login</Button>
             </Box>
             <Link to={'/send-password-reset-email'}>Forgot Password 🤔</Link>
-            {
-                error.status ? <Alert severity={error.type}>{error.msg}</Alert> :""
-            }
+
         </Box>
     </>;
 

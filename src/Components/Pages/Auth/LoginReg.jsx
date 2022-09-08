@@ -1,6 +1,6 @@
-import { Grid, Card, Tabs, Typography, Tab, Box } from "@mui/material"
+import { Grid, Card, Tabs,  Tab, Box } from "@mui/material"
 import { useState } from "react";
-import Pic1 from "../../images/undraw_empty_cart_co35.svg"
+// import Pic1 from "../../images/undraw_empty_cart_co35.svg"
 import Registration from "./Registration";
 import UserLogin from "./UserLogin";
 
@@ -31,10 +31,8 @@ const LoginReg = () => {
         setValue(newValue)
     }
     return <>
-        <Grid container sx={{ height: "100%" }}>
-            <Grid item lg={7} sm={5} >
-                <img src={Pic1} alt="" />
-            </Grid>
+        <Grid container sx={{ height: "100%",mt:5 } } justifyContent={"center"}>
+
             <Grid item lg={5} sm={7}>
                 <Card sx={{ width: "100%", height: "100%" }}>
                     <Box>
